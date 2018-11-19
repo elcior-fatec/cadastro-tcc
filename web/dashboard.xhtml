@@ -2,21 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      lang="pt-br">
+      lang="pt-br"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head jsf:id="head">
         <!-- Required meta tags -->
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-        <title>Formulario - AngularJS</title>
+        <title>Dashboard - Trabalhos</title>
         <!--Bootstraps CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <!--CSS-->
-        <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+        <link type="text/css" href="css/styles.css" rel="stylesheet" />
         <!--Fontes-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
     </head>
-    <body ng-app="" jsf:id="body">
+    <body jsf:id="body">
         <!--Navbar-topo-->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -29,21 +30,20 @@
                     </button>
                     <a class="navbar-brand" href="login.jsp"><span class="fab fa-rebel" style="color:#449d44"></span> TCC</a>
                 </div>
+                <form class="navbar-form navbar-right">
+                    <div class="input-group">                            
+                        <input type="text" class="form-control" placeholder="Buscar..."/>
+                        <div class="input-group-addon">
+                            <span class="fas fa-search"></span>
+                        </div>
+                    </div>
+                </form>
                 <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard <span class="fas fa-chart-pie"></span></a></li>
-                        <li><a href="#">Configurações <span class="fas fa-cog"></span></a></li>
+                    <ul class="nav navbar-nav navbar-right">                        
                         <li><a href="./admin/perfil-do-usuario.xhtml">Perfil <span class="fas fa-user-circle"></span></a></li>
                         <li><a href="#">Ajuda <span class="fas fa-question-circle"></span></a></li>
+                        <li><a href="#">Configurações <span class="fas fa-cog"></span></a></li>
                     </ul>
-                    <form class="navbar-form navbar-right">
-                        <div class="input-group">                            
-                            <input type="text" class="form-control" placeholder="Buscar..."/>
-                            <div class="input-group-addon">
-                                <span class="fas fa-search"></span>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
         </nav><!--/Navbar-topo-->
@@ -52,7 +52,11 @@
                 <!--sidebar-->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Overview <span class="sr-only"></span></a></li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="fas fa-chart-pie"></i> Dashboard<span class="sr-only"></span>
+                            </a>
+                        </li>
                         <li><a href="#">Menssagens</a></li>
                         <li><a href="#">Analise</a></li>
                         <li><a href="#">Exportar</a></li>
@@ -62,41 +66,32 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <div class="panel panel-default">                       
                         <div class="panel-body">
-                            <h1 class="page-header"><span class="fab fa-angular" style="color:#449d44"></span> Teste de formulário dinâmico em AngulaJS</h1>
-                            
-                            <!-- tODO formulario dinamico para cadastro -->
-                            <div class="row">
-                                <div class=" col-sm-8">
-                                    <form class="form-group">
-                                        Select a topic:
-                                        <select class="form-control" ng-model="myVar">
-                                            <option value=""></option>
-                                            <option value="dogs">Dogs</option>
-                                            <option value="tuts">Tutorials</option>
-                                            <option value="cars">Cars</option>
-                                        </select>
-                                    </form>
-                                </div>
+                            <h1 class="page-header"><span class="fas fa-chart-pie" style="color:#449d44"></span> Dashboard</h1>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <tr>
+                                        <th>Trabalho</th>
+                                        <th>Proprietário</th>
+                                        <th>Ultima modificações</th>
+                                        <th>Usuário da modificações</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Primeiro Trabalho</td>
+                                        <td>Joe Doe</td>
+                                        <td>19/11/2018 13:30:21</td>
+                                        <td>Joe Doe</td>
+                                        <td>
+                                            <a href=""><i class="fas fa-binoculars"></i></a>                                            
+                                            <a href=""><i class="fas fa-comment"><span class="badge">2</span></i></a>
+                                            <a href=""><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                            <div ng-switch="myVar">
-                                <div ng-switch-when="dogs">
-                                    <h1>Dogs</h1>
-                                    <p>Welcome to a world of dogs.</p>
-                                </div>
-                                <div ng-switch-when="tuts">
-                                    <h1>Tutorials</h1>
-                                    <p>Learn from examples.</p>
-                                </div>
-                                <div ng-switch-when="cars">
-                                    <h1>Cars</h1>
-                                    <p>Read about cars.</p>
-                                </div>
-                            </div>
-                            <p>The ng-switch directive hides and shows HTML sections depending on the value of the dropdown list.</p>
-
                         </div>
                     </div>
-                </div><!--/conteudo-->               
+                </div><!--/conteudo-->                
             </div>
         </div>
 
@@ -104,7 +99,5 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!--JS Bootstraps-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- AngularJS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </body>
 </html>

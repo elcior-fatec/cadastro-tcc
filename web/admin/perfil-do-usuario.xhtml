@@ -15,7 +15,7 @@
         <!--Bootstraps CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <!--CSS-->
-        <link type="text/css" href="../css/estilos.css" rel="stylesheet" />
+        <link type="text/css" href="../css/styles.css" rel="stylesheet" />
         <!--Fontes-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
     </head>
@@ -32,21 +32,20 @@
                     </button>
                     <a class="navbar-brand" href="login.jsp"><span class="fab fa-rebel" style="color:#449d44"></span> TCC</a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Dashboard <span class="fas fa-chart-pie"></span></a></li>
-                        <li><a href="#">Configurações <span class="fas fa-cog"></span></a></li>
-                        <li class="active"><a href="#">Perfil <span class="fas fa-user-circle"></span></a></li>
-                        <li><a href="#">Ajuda <span class="fas fa-question-circle"></span></a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right">
-                        <div class="input-group">                            
-                            <input type="text" class="form-control" placeholder="Buscar..."/>
-                            <div class="input-group-addon">
-                                <span class="fas fa-search"></span>
-                            </div>
+                <form class="navbar-form navbar-right">
+                    <div class="input-group">                            
+                        <input type="text" class="form-control" placeholder="Buscar..."/>
+                        <div class="input-group-addon">
+                            <span class="fas fa-search"></span>
                         </div>
-                    </form>
+                    </div>
+                </form>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">                        
+                        <li class="active"><a href="./admin/perfil-do-usuario.xhtml">Perfil <span class="fas fa-user-circle"></span></a></li>
+                        <li><a href="#">Ajuda <span class="fas fa-question-circle"></span></a></li>
+                        <li><a href="#">Configurações <span class="fas fa-cog"></span></a></li>
+                    </ul>
                 </div>
             </div>
         </nav><!--/Navbar-topo-->
@@ -55,7 +54,11 @@
                 <!--sidebar-->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Overview <span class="sr-only"></span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-chart-pie"></i> Dashboard<span class="sr-only"></span>
+                            </a>
+                        </li>
                         <li><a href="#">Menssagens</a></li>
                         <li><a href="#">Analise</a></li>
                         <li><a href="#">Exportar</a></li>

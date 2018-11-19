@@ -1,7 +1,3 @@
-
-# Created by https://www.gitignore.io/api/java-web,netbeans
-# Edit at https://www.gitignore.io/?templates=java-web,netbeans
-
 ### Java-Web ###
 ## ignoring target file
 target/
@@ -14,4 +10,7 @@ dist/
 nbdist/
 .nb-gradle/
 
-# End of https://www.gitignore.io/api/java-web,netbeans
+### SASS ###
+/web/css/sass/
+/web/css/styles.css.map
+/web/css/.sass-cache/
