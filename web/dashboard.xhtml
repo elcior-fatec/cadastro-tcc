@@ -52,12 +52,8 @@
                 <!--sidebar-->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active">
-                            <a href="#">
-                                <i class="fas fa-chart-pie"></i> Dashboard<span class="sr-only"></span>
-                            </a>
-                        </li>
-                        <li><a href="#">Menssagens</a></li>
+                        <li class="active"><a href="./dashboard.xhtml"><i class="fas fa-chart-pie"></i> Dashboard<span class="sr-only"></span></a></li>
+                        <li><a href="./cadastro-referencias.xhtml">Referências <span class="fas fa-bookmark"></span></a></li>
                         <li><a href="#">Analise</a></li>
                         <li><a href="#">Exportar</a></li>
                     </ul>
@@ -68,13 +64,14 @@
                         <div class="panel-body">
                             <h1 class="page-header"><span class="fas fa-chart-pie" style="color:#449d44"></span> Dashboard</h1>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover">
+                                <table class="table table-bordered table-hover table-condensed tabela-trabalhos">
                                     <tr>
                                         <th>Trabalho</th>
                                         <th>Proprietário</th>
                                         <th>Ultima modificações</th>
                                         <th>Usuário da modificações</th>
                                         <th>Ações</th>
+                                        <th>Apagar</th>
                                     </tr>
                                     <tr>
                                         <td>Primeiro Trabalho</td>
@@ -84,6 +81,8 @@
                                         <td>
                                             <a href=""><i class="fas fa-binoculars"></i></a>                                            
                                             <a href=""><i class="fas fa-comment"><span class="badge">2</span></i></a>
+                                        </td>
+                                        <td>
                                             <a href=""><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
