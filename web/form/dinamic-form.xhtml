@@ -63,40 +63,206 @@
                     <div class="panel panel-default">                       
                         <div class="panel-body">
                             <h1 class="page-header"><span class="fab fa-angular" style="color:#449d44"></span> Teste de formulário dinâmico em AngulaJS</h1>
-                            
-                            <!-- tODO formulario dinamico para cadastro -->
+                            <h3>Selecione uma das opções a baixo e preencha o formulário.</h3>
                             <div class="row">
-                                <div class=" col-sm-8">
-                                    <form class="form-group">
-                                        Select a topic:
-                                        <select class="form-control" ng-model="myVar">
-                                            <option value=""></option>
-                                            <option value="dogs">Dogs</option>
-                                            <option value="tuts">Tutorials</option>
-                                            <option value="cars">Cars</option>
-                                        </select>
-                                    </form>
-                                </div>
+                                <div class=" col-sm-12">
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#livro" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="livro" data-parent="#accordion">Livro</a>
+                                                </h4>
+                                            </div>
+                                            <div id="livro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="livro">
+                                                <div class="panel-body">
+                                                    <h1>Livro</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#secaoLivro" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="secaoLivro" data-parent="#accordion">Seção de Livro</a>
+                                                </h4>
+                                            </div>
+                                            <div id="secaoLivro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="secaoLivro">
+                                                <div class="panel-body">
+                                                    <h1>Seção de Livro</h1>                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#artigoPeriodico" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="artigoPeriodico" data-parent="#accordion">Artigo de Periódico</a>
+                                                </h4>
+                                            </div>
+                                            <div id="artigoPeriodico" class="panel-collapse collapse" role="tabpanel" aria-labelledby="artigoPeriodico">
+                                                <div class="panel-body">
+                                                    <h1>Artigo Periódico</h1>                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#ataConferencia" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="ataConferencia" data-parent="#accordion">Ata de Conferência</a>
+                                                </h4>
+                                            </div>
+                                            <div id="ataConferencia" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ataConferencia">
+                                                <h1>Ata Conferência</h1>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#relatorio" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="relatorio" data-parent="#accordion">Relatório</a>
+                                                </h4>
+                                            </div>
+                                            <div id="relatorio" class="panel-collapse collapse" role="tabpanel" aria-labelledby="relatorio">
+                                                <div class="panel-body">
+                                                    <h1>Relatorio</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#site" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="site" data-parent="#accordion">Site</a>
+                                                </h4>
+                                            </div>
+                                            <div id="site" class="panel-collapse collapse" role="tabpanel" aria-labelledby="site">
+                                                <div class="panel-body">
+                                                    <h1>Site</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#documentoSite" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="documentoSite" data-parent="#accordion">Documento de Site</a>
+                                                </h4>
+                                            </div>
+                                            <div id="documentoSite" class="panel-collapse collapse" role="tabpanel" aria-labelledby="documentoSite">
+                                                <div class="panel-body">
+                                                    <h1>Documento Site</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#fonteEletronica" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="fonteEletronica" data-parent="#accordion">Fonte Eletrônica</a>
+                                                </h4>
+                                            </div>
+                                            <div id="fonteEletronica" class="panel-collapse collapse" role="tabpanel" aria-labelledby="fonteEletronica">
+                                                <div class="panel-body">
+                                                    <h1>Fonte Eletrônica</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#arte" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="arte" data-parent="#accordion">Arte</a>
+                                                </h4>
+                                            </div>
+                                            <div id="arte" class="panel-collapse collapse" role="tabpanel" aria-labelledby="arte">
+                                                <div class="panel-body">
+                                                    <h1>Arte</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#gravacaoSom" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="gravacaoSom" data-parent="#accordion">Gravação de Som</a>
+                                                </h4>
+                                            </div>
+                                            <div id="gravacaoSom" class="panel-collapse collapse" role="tabpanel" aria-labelledby="gravacaoSom">
+                                                <div class="panel-body">
+                                                    <h1>Gravação de Som</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#atuacao" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="atuacao" data-parent="#accordion">Atuaçao</a>
+                                                </h4>
+                                            </div>
+                                            <div id="atuacao" class="panel-collapse collapse" role="tabpanel" aria-labelledby="atuacao">
+                                                <div class="panel-body">
+                                                    <h1>Atuação</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default"> 
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#filme" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="filme" data-parent="#accordion">Filme</a>
+                                                </h4>
+                                            </div>
+                                            <div id="filme" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filme">
+                                                <div class="panel-body">
+                                                    <h1>Filme</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#entrevista" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="entrevista" data-parent="#accordion">Entrevista</a>
+                                                </h4>
+                                            </div>
+                                            <div id="entrevista" class="panel-collapse collapse" role="tabpanel" aria-labelledby="entrevista">
+                                                <div class="panel-body">
+                                                    <h1>Entrevista</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#patente" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="patente" data-parent="#accordion">Patente</a>
+                                                </h4>
+                                            </div>
+                                            <div id="patente" class="panel-collapse collapse" role="tabpanel" aria-labelledby="patente">
+                                                <div class="panel-body">
+                                                    <h1>Patente</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#processo" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="processo" data-parent="#accordion">Processo</a>
+                                                </h4>
+                                            </div>
+                                            <div id="processo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="processo">
+                                                <div class="panel-body">
+                                                    <h1>Processo</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#diversos" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="diversos" data-parent="#accordion">Diversos</a>
+                                                </h4>
+                                            </div>
+                                            <div id="diversos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="diversos">
+                                                <div class="panel-body">
+                                                    <h1>Diversos</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
                             </div>
-                            <div ng-switch="myVar">
-                                <div ng-switch-when="dogs">
-                                    <h1>Dogs</h1>
-                                    <p>Welcome to a world of dogs.</p>
-                                </div>
-                                <div ng-switch-when="tuts">
-                                    <h1>Tutorials</h1>
-                                    <p>Learn from examples.</p>
-                                </div>
-                                <div ng-switch-when="cars">
-                                    <h1>Cars</h1>
-                                    <p>Read about cars.</p>
-                                </div>
-                            </div>
-                            <p>The ng-switch directive hides and shows HTML sections depending on the value of the dropdown list.</p>
-
                         </div>
-                    </div>
-                </div><!--/conteudo-->               
+                    </div><!--/conteudo-->               
+                </div>
             </div>
         </div>
 
