@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      lang="pt-br">
+      lang="pt-br"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head jsf:id="head">
         <!-- Required meta tags -->
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-        <title>Formulario - AngularJS</title>
+        <title>Formulario Dinâmico</title>
         <!--Bootstraps CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <!--CSS-->
@@ -62,8 +63,9 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <div class="panel panel-default">                       
                         <div class="panel-body">
-                            <h1 class="page-header"><span class="fab fa-angular" style="color:#449d44"></span> Teste de formulário dinâmico em AngulaJS</h1>
+                            <h1 class="page-header"><span class="fas fa-database" style="color:#449d44"></span> Teste de formulário dinâmico.</h1>
                             <h3>Selecione uma das opções a baixo e preencha o formulário.</h3>
+                            <p>Para a referência correta, é aconselhável preencger todos os itens marcados com: <span class="form-ref__parametro-importante">*</span></p>
                             <div class="row">
                                 <div class=" col-sm-12">
                                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -75,7 +77,97 @@
                                             </div>
                                             <div id="livro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="livro">
                                                 <div class="panel-body">
-                                                    <h1>Livro</h1>
+                                                    <h3>Livro</h3>
+                                                    <form jsf:id="form" class="container-fluid form-ref">
+                                                        <div class="form-ref__container col-sm-10 col-sm-offset-1">
+                                                            <div class="form-group">
+                                                                <label class="form-ref__label">Autor <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control form-ref__input-configuravel" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                                <a href="#" class="btn btn-default">Editar</a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Título <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu sobrenome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Data <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="date" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>                                                            
+                                                            <div class="form-group">
+                                                                <label>Cidade <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Estado/Província</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu sobrenome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>País/Região</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>
+                                                            
+                                                            <div class="form-group">
+                                                                <label>Editora <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-ref__label">Editor <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control form-ref__input-configuravel" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                                <a href="#" class="btn btn-default">Editar</a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Volume <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Número de Volumes</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>                                                                                   
+                                                            <div class="form-group">
+                                                                <label>Tradutor</label>
+                                                                <input class="form-control" type="date" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Título Curto</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu sobrenome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Número Padrão</label>
+                                                                <input class="form-control" type="date" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>                                                                                                                                              
+                                                            <div class="form-group">
+                                                                <label>Número de Páginas</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>                                                                                   
+                                                            <div class="form-group">
+                                                                <label>Edição <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Comentários</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Midia</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Data de Acesso</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>URL</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>                                                                                   
+                                                            <div class="form-group">
+                                                                <label>DOI</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <a href="#" class="btn btn-primary" jsf:action="#{tbInfoUsuariosBeans.inserir()}">Salvar</a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

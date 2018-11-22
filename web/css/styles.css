@@ -118,4 +118,18 @@ body {
     margin-top: 100px;
     background-color: rgba(255, 255, 255, 0.6); }
 
+/* 
+    Created on : 22/11/2018, 16:36:41
+    Author     : elcior.carvalho
+*/
+.form-ref__parametro-importante {
+  color: #d9534f; }
+
+.form-ref__label {
+  display: block; }
+
+.form-ref__input-configuravel {
+  display: inline;
+  width: 91%; }
+
 /*# sourceMappingURL=styles.css.map */
