@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      lang="pt-br"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head jsf:id="head">
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <title>Formulario Dinâmico</title>
+        <!--Bootstraps CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <!--CSS-->
+        <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+        <!--Fontes-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+    </head>
+    <body ng-app="" jsf:id="body">
+        <!--Navbar-topo-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="login.jsp"><span class="fab fa-rebel" style="color:#449d44"></span> TCC</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Dashboard <span class="fas fa-chart-pie"></span></a></li>
+                        <li><a href="#">Configurações <span class="fas fa-cog"></span></a></li>
+                        <li><a href="./admin/perfil-do-usuario.xhtml">Perfil <span class="fas fa-user-circle"></span></a></li>
+                        <li><a href="#">Ajuda <span class="fas fa-question-circle"></span></a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        <div class="input-group">                            
+                            <input type="text" class="form-control" placeholder="Buscar..."/>
+                            <div class="input-group-addon">
+                                <span class="fas fa-search"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav><!--/Navbar-topo-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--sidebar-->
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li class="active"><a href="#">Overview <span class="sr-only"></span></a></li>
+                        <li><a href="#">Menssagens</a></li>
+                        <li><a href="#">Analise</a></li>
+                        <li><a href="#">Exportar</a></li>
+                    </ul>
+                </div><!--/sidebar-->                
+                <!--conteudo-->
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div class="panel panel-default">                       
+                        <div class="panel-body">
+                            <h1 class="page-header"><span class="fas fa-database" style="color:#449d44"></span> Teste de formulário dinâmico.</h1>
+                            <h3>Selecione uma das opções a baixo e preencha o formulário.</h3>
+                            <p>Para a referência correta, é aconselhável preencger todos os itens marcados com: <span class="form-ref__parametro-importante">*</span></p>
+                            <div class="row">
+                                <div class=" col-sm-12">
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#livro" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="livro" data-parent="#accordion">Livro</a>
+                                                </h4>
+                                            </div>
+                                            <div id="livro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="livro">
+                                                <div class="panel-body">
+                                                    <h3>Livro</h3>
+                                                    <form jsf:id="form" class="container-fluid form-ref">
+                                                        <div class="form-ref__container col-sm-10 col-sm-offset-1">
+                                                            <div class="form-group">
+                                                                <label class="form-ref__label">Autor <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control form-ref__input-configuravel" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                                <a href="#" class="btn btn-default">Editar</a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Título <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu sobrenome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Data <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="date" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>                                                            
+                                                            <div class="form-group">
+                                                                <label>Cidade <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Estado/Província</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu sobrenome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>País/Região</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>
+                                                            
+                                                            <div class="form-group">
+                                                                <label>Editora <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-ref__label">Editor <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control form-ref__input-configuravel" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                                <a href="#" class="btn btn-default">Editar</a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Volume <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Número de Volumes</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>                                                                                   
+                                                            <div class="form-group">
+                                                                <label>Tradutor</label>
+                                                                <input class="form-control" type="date" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Título Curto</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu sobrenome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Número Padrão</label>
+                                                                <input class="form-control" type="date" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>                                                                                                                                              
+                                                            <div class="form-group">
+                                                                <label>Número de Páginas</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>                                                                                   
+                                                            <div class="form-group">
+                                                                <label>Edição <span class="form-ref__parametro-importante">*</span></label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Comentários</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Midia</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu e-mail" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Data de Acesso</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>URL</label>
+                                                                <input class="form-control" type="text" placeholder="Digite a Instituição à qual é vinculado" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                                            </div>                                                                                   
+                                                            <div class="form-group">
+                                                                <label>DOI</label>
+                                                                <input class="form-control" type="text" placeholder="Digite seu nome" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <a href="#" class="btn btn-primary" jsf:action="#{tbInfoUsuariosBeans.inserir()}">Salvar</a>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#secaoLivro" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="secaoLivro" data-parent="#accordion">Seção de Livro</a>
+                                                </h4>
+                                            </div>
+                                            <div id="secaoLivro" class="panel-collapse collapse" role="tabpanel" aria-labelledby="secaoLivro">
+                                                <div class="panel-body">
+                                                    <h1>Seção de Livro</h1>                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#artigoPeriodico" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="artigoPeriodico" data-parent="#accordion">Artigo de Periódico</a>
+                                                </h4>
+                                            </div>
+                                            <div id="artigoPeriodico" class="panel-collapse collapse" role="tabpanel" aria-labelledby="artigoPeriodico">
+                                                <div class="panel-body">
+                                                    <h1>Artigo Periódico</h1>                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#ataConferencia" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="ataConferencia" data-parent="#accordion">Ata de Conferência</a>
+                                                </h4>
+                                            </div>
+                                            <div id="ataConferencia" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ataConferencia">
+                                                <h1>Ata Conferência</h1>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#relatorio" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="relatorio" data-parent="#accordion">Relatório</a>
+                                                </h4>
+                                            </div>
+                                            <div id="relatorio" class="panel-collapse collapse" role="tabpanel" aria-labelledby="relatorio">
+                                                <div class="panel-body">
+                                                    <h1>Relatorio</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#site" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="site" data-parent="#accordion">Site</a>
+                                                </h4>
+                                            </div>
+                                            <div id="site" class="panel-collapse collapse" role="tabpanel" aria-labelledby="site">
+                                                <div class="panel-body">
+                                                    <h1>Site</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#documentoSite" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="documentoSite" data-parent="#accordion">Documento de Site</a>
+                                                </h4>
+                                            </div>
+                                            <div id="documentoSite" class="panel-collapse collapse" role="tabpanel" aria-labelledby="documentoSite">
+                                                <div class="panel-body">
+                                                    <h1>Documento Site</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#fonteEletronica" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="fonteEletronica" data-parent="#accordion">Fonte Eletrônica</a>
+                                                </h4>
+                                            </div>
+                                            <div id="fonteEletronica" class="panel-collapse collapse" role="tabpanel" aria-labelledby="fonteEletronica">
+                                                <div class="panel-body">
+                                                    <h1>Fonte Eletrônica</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#arte" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="arte" data-parent="#accordion">Arte</a>
+                                                </h4>
+                                            </div>
+                                            <div id="arte" class="panel-collapse collapse" role="tabpanel" aria-labelledby="arte">
+                                                <div class="panel-body">
+                                                    <h1>Arte</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#gravacaoSom" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="gravacaoSom" data-parent="#accordion">Gravação de Som</a>
+                                                </h4>
+                                            </div>
+                                            <div id="gravacaoSom" class="panel-collapse collapse" role="tabpanel" aria-labelledby="gravacaoSom">
+                                                <div class="panel-body">
+                                                    <h1>Gravação de Som</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#atuacao" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="atuacao" data-parent="#accordion">Atuaçao</a>
+                                                </h4>
+                                            </div>
+                                            <div id="atuacao" class="panel-collapse collapse" role="tabpanel" aria-labelledby="atuacao">
+                                                <div class="panel-body">
+                                                    <h1>Atuação</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default"> 
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#filme" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="filme" data-parent="#accordion">Filme</a>
+                                                </h4>
+                                            </div>
+                                            <div id="filme" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filme">
+                                                <div class="panel-body">
+                                                    <h1>Filme</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#entrevista" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="entrevista" data-parent="#accordion">Entrevista</a>
+                                                </h4>
+                                            </div>
+                                            <div id="entrevista" class="panel-collapse collapse" role="tabpanel" aria-labelledby="entrevista">
+                                                <div class="panel-body">
+                                                    <h1>Entrevista</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#patente" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="patente" data-parent="#accordion">Patente</a>
+                                                </h4>
+                                            </div>
+                                            <div id="patente" class="panel-collapse collapse" role="tabpanel" aria-labelledby="patente">
+                                                <div class="panel-body">
+                                                    <h1>Patente</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#processo" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="processo" data-parent="#accordion">Processo</a>
+                                                </h4>
+                                            </div>
+                                            <div id="processo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="processo">
+                                                <div class="panel-body">
+                                                    <h1>Processo</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="">
+                                                <h4 class="panel-title">
+                                                    <a href="#diversos" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="diversos" data-parent="#accordion">Diversos</a>
+                                                </h4>
+                                            </div>
+                                            <div id="diversos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="diversos">
+                                                <div class="panel-body">
+                                                    <h1>Diversos</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div><!--/conteudo-->               
+                </div>
+            </div>
+        </div>
+
+        <!--JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--JS Bootstraps-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </body>
+</html>

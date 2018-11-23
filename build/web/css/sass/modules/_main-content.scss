@@ -1,0 +1,16 @@
+//    Created on : 19/11/2018, 15:18:51
+//    Author     : elcior.carvalho
+
+//Main content
+.main {
+    padding: 20px;
+    @media (min-width: $tela-celular) {
+        & {
+            padding-right: 40px;
+            padding-left: 40px;
+        }
+    }
+    .page-header {
+        margin-top: 40px;
+    }
+}

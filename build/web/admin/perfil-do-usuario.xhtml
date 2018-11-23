@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"      
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head jsf:id="head">
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <title>Meu Perfil</title>
+        <!--Bootstraps CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <!--CSS-->
+        <link type="text/css" href="../css/styles.css" rel="stylesheet" />
+        <!--Fontes-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+    </head>
+    <body jsf:id="body">
+        <!--Navbar-topo-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="login.jsp"><span class="fab fa-rebel" style="color:#449d44"></span> TCC</a>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <div class="input-group">                            
+                        <input type="text" class="form-control" placeholder="Buscar..."/>
+                        <div class="input-group-addon">
+                            <span class="fas fa-search"></span>
+                        </div>
+                    </div>
+                </form>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">                        
+                        <li class="active"><a href="./admin/perfil-do-usuario.xhtml">Perfil <span class="fas fa-user-circle"></span></a></li>
+                        <li><a href="#">Ajuda <span class="fas fa-question-circle"></span></a></li>
+                        <li><a href="#">Configurações <span class="fas fa-cog"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav><!--/Navbar-topo-->
+        <div class="container-fluid">
+            <div class="row">
+                <!--sidebar-->
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-chart-pie"></i> Dashboard<span class="sr-only"></span>
+                            </a>
+                        </li>
+                        <li><a href="#">Menssagens</a></li>
+                        <li><a href="#">Analise</a></li>
+                        <li><a href="#">Exportar</a></li>
+                    </ul>
+                </div><!--/sidebar-->                
+                <!--conteudo-->
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <div class="panel panel-default">                       
+                        <div class="panel-body">
+                            <h1 class="page-header"><span class="fas fa-user-circle" style="color:#449d44"></span> Perfil</h1>
+                            <h3>Suas informações</h3>
+                            <form jsf:id="form" class="container-fluid">
+                                <div style="width: 60%">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input class="form-control" type="text" placeholder="#{tbInfoUsuariosBeans.retornarconsulta(1).nome}" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.nome}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sobrenome</label>
+                                        <input class="form-control" type="text" placeholder="#{tbInfoUsuariosBeans.retornarconsulta(1).sobrenome}" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.sobrenome}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>E-mail</label>
+                                        <input class="form-control" type="email" placeholder="#{tbInfoUsuariosBeans.retornarconsulta(1).email}" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.email}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Instituição Vinculada</label>
+                                        <input class="form-control" type="text" placeholder="#{tbInfoUsuariosBeans.retornarconsulta(1).instituicaoVinculada}" jsf:value="#{tbInfoUsuariosBeans.infoUsuario.instituicaoVinculada}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Título</label>
+                                        <select class="form-control" jsf:value="#{tbInfoUsuariosBeans.retornarconsulta(1).titulacao}" size="1">
+                                            <f:selectItem itemValue="Nenhum" itemLabel="Nenhum" />
+                                            <f:selectItem itemValue="Graduado(a)" itemLabel="Graduado(a)" />
+                                            <f:selectItem itemValue="Mestre" itemLabel="Mestre" />
+                                            <f:selectItem itemValue="Doutor(a)" itemLabel="Doutor(a)" />
+                                            <f:selectItem itemValue="Pós-Doutorado(a)" itemLabel="Pós-Doutorado(a)" />
+                                        </select>
+                                    </div>
+                                    <hr />
+                                    <h3>Informações de acesso <small>- entre em contato com administrador</small></h3>
+                                    <div class="form-group">
+                                        <label>Nome de usuário</label>
+                                        <input class="form-control" type="text" placeholder="#{tbLoginUsuariosBeans.retornarconsulta(1).userName}" disabled="disabled" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Senha</label>
+                                        <input class="form-control" type="text" placeholder="*****" disabled="disabled" />
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="#" class="btn btn-primary" jsf:action="#{tbInfoUsuariosBeans.alterar()}">Alterar</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!---/panel-body-->
+                    </div><!--/panel-->
+                </div><!--/conteudo-->                
+            </div>
+        </div>
+        <!--JQUERY-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--JS Bootstraps-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
