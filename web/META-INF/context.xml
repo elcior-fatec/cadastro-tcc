@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/cadastro-tcc">
-  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="ConexaoPostgreUOL" password="*1cl3@N1s+3r3T" type="javax.sql.DataSource" url="jdbc:postgresql://projeto-tcc.postgres.uhserver.com:5432/projeto_tcc" username="elcior_ftc"/>
+  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="ConexaoPostgreUOL" password="" type="javax.sql.DataSource" url="jdbc:postgresql://projeto-tcc.postgres.uhserver.com:5432/projeto_tcc" username="elcior_ftc"/>
 </Context>
