@@ -2,16 +2,16 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="cadastro-tccPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <non-jta-data-source>ConexaoPostgreUOL</non-jta-data-source>
     <class>models.Contatos</class>
     <class>models.TbInfoUsuarios</class>
     <class>models.TbLoginUsuarios</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/proj_tcc"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://projeto-tcc.postgres.uhserver.com/projeto_tcc"/>
       <property name="javax.persistence.jdbc.user" value="elcior_ftc"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="2840481623010"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.jdbc.password" value="T3r3+s1NH43lc1*"/>
     </properties>
   </persistence-unit>
 </persistence>
