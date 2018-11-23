@@ -11,7 +11,7 @@
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://projeto-tcc.postgres.uhserver.com/projeto_tcc"/>
       <property name="javax.persistence.jdbc.user" value="elcior_ftc"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=" "/>
+      <property name="javax.persistence.jdbc.password" value="*1cl3@N1s+3r3T"/>
     </properties>
   </persistence-unit>
 </persistence>
